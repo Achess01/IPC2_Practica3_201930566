@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block head_content %}    
+    <title>Agregar podcast</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/post.css'%}">
+{% endblock head_content %}
+{% block main %}
+    <h1>{{Message}}</h1>    
+    <h1>Agregar podcast</h1>    
+    <form action="" method="POST">    
+        {% csrf_token %}
+        <label for="name">Nombre:</label>
+        <input type="text" name="name" placeholder="Nombre del podcast" required>
+        <br>
+        <label for="conductor">Conductores:</label>
+        <input type="text" placeholder="Conductores" name="conductor" required>
+        <br>
+        <label for="chapter">Último capítulo(url):</label>
+        <input type="url" placeholder="https://www.youtube.com/" name="chapter" required>
+        <br>
+        <input type="submit" value="Agregar" class="btn">
+    </form>
+{% endblock main %}

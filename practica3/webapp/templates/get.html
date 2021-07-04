@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block head_content %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/get.css'%}">
+    <title>Podcasts</title>
+{% endblock head_content %} 
+
+{% block main %}
+    <h1>Resultados de GET</h1>
+    <section class="podcasts">
+        {% for podcast in  podcasts%}
+            <article class="podcast">
+                <p>ID: {{podcast.id}}</p>
+                <h2>{{podcast.nombre}}</h2>  
+                <p>Conductores: {{podcast.conductores}}</p>
+                <a href="{{podcast.last_chapter}}" target="_blank">Último capítulo</a>
+            </article>
+        {% endfor %}
+    </section>
+{% endblock main %}

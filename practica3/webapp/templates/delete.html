@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block head_content %}    
+    <title>Eliminar podcast</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/post.css'%}">
+{% endblock head_content %}
+{% block main %}
+    <h1>{{Message}}</h1>    
+    <h1>Eliminar podcast</h1>    
+    <form action="" method="POST">    
+        {% csrf_token %}
+        <label for="id">ID:</label>
+        <input type="number" name="id" placeholder="Id el podcast" required>        
+        <input type="submit" value="Eliminar" class="btn">
+    </form>
+{% endblock main %}

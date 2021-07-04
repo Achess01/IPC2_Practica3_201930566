@@ -19,5 +19,9 @@ from webapp.views import *
 
 urlpatterns = [
     #path('admin/', admin.site.urls),
-    path('', home)
+    path('', home),
+    path('GET/', get),
+    path('POST/', post),
+    path('PUT/', put),
+    path('DELETE/', delete)
 ]
